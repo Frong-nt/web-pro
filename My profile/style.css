@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Sriracha&subset=thai');
+body{
+    font-family: 'Sriracha', cursive;
+    background-color: #e8e8e8;
+}
+nav{
+    font-size: 1.3em;
+}
+.jumbotron{
+    background-image: url("img/tim-trad-282563-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.jumbotron p{
+    color: #edeff2;
+    padding: 10px;
+}
+@media (min-width: 452px) {
+    .jumbotron p{
+        font-size: 22px;
+        text-shadow: 2px 2px black;
+        margin-top: 30%;
+    }
+    #me-img{
+        width: 120px;
+        height: 120px;    
+        margin-top: 10%;   
+    }
+    .jumbotron{
+        height: 160px;
+
+    }
+ }
+ @media (min-width: 576px) {
+    .jumbotron p{
+        font-size: 25px;
+        text-shadow: 2px 2px black;
+        margin-top: 26%;
+    }
+    #me-img{
+        width: 150px;
+        height: 150px;    
+        margin-top: 6%;   
+    }
+    .jumbotron{
+        height: 200px;
+
+    }
+ }
+ @media (min-width: 992px) { 
+         .jumbotron p{
+        font-size: 45px;
+        text-shadow: 2px 2px black;
+        margin-top: 10%;
+    }
+    #me-img{
+        width: 170px;
+        height: 170px;    
+        margin-top: 2%;   
+    }
+  }
+#me-img{
+  display: inline-block;
+  border-radius: 50%;
+  background-image: url('img/me.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  
+  border: 6px solid white;
+}
