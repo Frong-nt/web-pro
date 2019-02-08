@@ -124,5 +124,23 @@
       <hr>
 
     </div>
+
+    <script>
+      var button1 = document.querySelector("body > div > ol:nth-child(7) > li:nth-child(2) > button");
+      function addElement1() {
+          document.querySelector("body > div > ol:nth-child(7)").append(document.createElement("li"))
+
+        }
+        button1.addEventListener("click", addElement1);
+
+        var button = document.querySelector("body > div > ol:nth-child(10) > li > button");
+        function addElement() {
+            for (let i = 0; i < 5; i++) {
+              document.querySelector("body > div > ol:nth-child(10)").append(document.createElement("li"));
+            }
+
+          }
+          button.addEventListener("click", addElement);
+    </script>
   </body>
 </html>
