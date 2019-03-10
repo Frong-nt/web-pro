@@ -150,17 +150,26 @@
       add = function () {
           let li = document.createElement("li");
           li.className = "list-group-item d-flex justify-content-between align-items-center";
+          
           let button = document.createElement("button");
           button.className = "close";
           button.setAttribute("type", "button");
-          button.append(document.createElement("span").setAttribute("aria-hidden", true));
           
-
-          li.textContent = document.querySelector("#todo-item-text").value;
+          button.innerHTML = "<span>&times;</span>";
+          li.innerHTML = document.querySelector("#todo-item-text").value;
           li.append(button);
           list.append(li);
         }
         document.querySelector("body > div > div > div > button").addEventListener("click", add);
+
+        list.addEventListener("click", function (event) {
+            let button = document.querySelectorAll("#example button");
+            for(let i=0;i<button.length;i++){
+              button[i].addEventListener("click", function(){
+                button[i].parentNode.remove();
+              })
+            }
+          })
     </script>
   </body>
 </html>

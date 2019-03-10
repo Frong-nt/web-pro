@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+  </head>
+  <body>
+    <div id="app1" style="margin-left: 100px;">
+        <h3>Example 1: v-model</h3>
+        <p>
+            <input v-model="message" placeholder="edit me">
+            <p>Message is: {{ message }}</p>
+        </p>
+        <br /><br />
+        <h3>Example 2: checkbox</h3>
+        <p>
+            <div id='example-2'>
+                <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+                <label for="jack">Jack</label>
+                <input type="checkbox" id="john" value="John" v-model="checkedNames">
+                <label for="john">John</label>
+                <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+                <label for="mike">Mike</label>
+                <br>
+                <span>Checked names: {{ checkedNames }}</span>
+            </div>
+        </p>
+        <br /><br />
+        <h3>Example 3: radio</h3>
+        <p>
+            <div id='example-3'>
+                <input type="radio" id="one" value="One" v-model="picked">
+                <label for="one">One</label>
+                <br>
+                <input type="radio" id="two" value="Two" v-model="picked">
+                <label for="two">Two</label>
+                <br>
+                <span>Picked: {{ picked }}</span>
+            </div>
+        </p>
+        <br /><br />
+        <h3>Example 4: selects</h3>
+        <p>
+            <div id='example-3'>
+                    <select v-model="selected">
+                            <option disabled value="">Please select one</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                    </select><br/>
+                    <span>Selected: {{ selected }}</span>
+            </div>
+        </p>
+        <br /><br />
+        <h3>Example 5: multiple select</h3>
+        <p>
+                      <div id='test'>
+                        <select v-model="selectList" multiple >
+                          <option disabled value="">Please select one</option>
+                          <option v-for = "item in items">{{item}}</option>
+                        </select><br />
+                        <span>Selected: {{ selectList }}</span>
+                      </div>
+        </p>
+                <h3>Example 6: multiple select</h3>
+                <p>
+                        <template v-for = "item in items">
+                          <p>
+                          <input type="checkbox" :id=item :value= item v-model="pickLisy">
+                          <label :for=item>{{item}}</label>
+                          </p>
+                        </template>
+                          <br>
+                          <span>selected names: {{ pickLisy }}</span>
+                      
+                </p>
+                    <h3>Example 7: multiple select</h3>
+                    <p>
+                      <input type="text" v-model:="message">
+                      <button v-on:click="reverse">reverse</button>
+                      <p>{{message}}</p>
+                    </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#app1",
+        data: {
+            message: 'reverse text',
+            checkedNames: [],
+            picked: '',
+            selected: '',
+            items: ['apple', 'banana', 'orange', 'coconut', 'mango'],
+            selectList:[],
+            pickLisy:[], // Try to create checkbox of this array
+        }, 
+        methods:{
+          reverse: function(){
+            this.message = this.message.split("").reverse.join("");
+            console.log(this.message);
+          }
+        }
+        
+      })
+    </script>
+  </body>
+</html>
